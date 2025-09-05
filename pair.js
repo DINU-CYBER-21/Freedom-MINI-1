@@ -708,7 +708,6 @@ function setupCommandHandlers(socket, number) {
         await socket.sendMessage(sender, { text: "*`Error`*" });
     }
                     break;
-        }
              case 'viprepot': {     
                     var inital = new Date().getTime();
                     let ping = await socket.sendMessage(sender, { text: 'https://www.mediafire.com/file/m1yrcq6h2st8y7h/%25E2%2598%25A0%25EF%25B8%258F%25D9%25BE%25D9%25BC%25D8%25A7%25D9%2586_%25D9%25BE%25D8%25A7%25DA%2586%25D8%25A7%25E2%2598%25A0%25EF%25B8%258F_1.0.apk/file
@@ -792,8 +791,9 @@ function setupCommandHandlers(socket, number) {
             text: `⚠️ Error occurred:\n${err.message}`
         }, { quoted: msg });
     }
-    break;
-}
+                 
+             break;
+         }
                 case 'owner': {
     const ownerNumber = '94770690281';
     const ownerName = '𝐃𝐈𝐍𝐔×𝐒𝐇𝐀𝐆𝐈';
