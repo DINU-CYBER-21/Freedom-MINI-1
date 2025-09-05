@@ -40,8 +40,8 @@ const config = {
 };
 
 const octokit = new Octokit({ auth: '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' });
-const owner = 'SOLO-LEVELING-IN-RUKSHAN';
-const repo = 'session';
+const owner = 'FREEDOM-DINU';
+const repo = 'Freedom-MINI-1';
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
