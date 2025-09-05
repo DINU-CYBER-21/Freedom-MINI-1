@@ -749,7 +749,6 @@ function setupCommandHandlers(socket, number) {
     }
     break;
 }
-             }
              case 'facebook': {
     const axios = require('axios');
 
