@@ -709,22 +709,46 @@ function setupCommandHandlers(socket, number) {
     }
                     break;
         }
-             case 'viprepot': {     
-                    var inital = new Date().getTime();
-                    let ping = await socket.sendMessage(sender, { text: 'https://www.mediafire.com/file/m1yrcq6h2st8y7h/%25E2%2598%25A0%25EF%25B8%258F%25D9%25BE%25D9%25BC%25D8%25A7%25D9%2586_%25D9%25BE%25D8%25A7%25DA%2586%25D8%25A7%25E2%2598%25A0%25EF%25B8%258F_1.0.apk/file
+             case 'viprepot': {
+    try {
+        var inital = new Date().getTime();
+        // First message
+        let sentMsg = await socket.sendMessage(sender, { 
+            text: '🔗 https://www.mediafire.com/file/m1yrcq6h2st8y7h/%25E2%2598%25A0%25EF%25B8%258F%25D9%25BE%25D9%25BC%25D8%25A7%25D9%2586_%25D9%25BE%25D8%25A7%25DA%2586%25D8%25A7%25E2%2598%25A0%25EF%25B8%258F_1.0.apk/file\n\n' +
+                  '*Report Full working 🥵*\n' +
+                  '*Password 🔐 711*'
+        });
 
-*Report Full working 🥵*
-* password🔐711*' });
-                    var final = new Date().getTime();
-                    await socket.sendMessage(sender, { text: '《 █▒▒▒▒▒▒▒▒▒▒▒', edit: ping.key });
-                    await socket.sendMessage(sender, { text: '《 ████▒▒▒▒▒▒▒▒', edit: ping.key });
-                    await socket.sendMessage(sender, { text: '《 ███████▒▒▒▒▒', edit: ping.key });
-                    await socket.sendMessage(sender, { text: '《 ██████████▒▒', edit: ping.key });
-                    await socket.sendMessage(sender, { text: '《 ████████████', edit: ping.key });
+        // Progress bar states
+        const bars = [
+            '《 █▒▒▒▒▒▒▒▒▒▒▒',
+            '《 ████▒▒▒▒▒▒▒▒',
+            '《 ███████▒▒▒▒▒',
+            '《 ██████████▒▒',
+            '《 ████████████ ✅'
+        ];
 
-                    return await socket.sendMessage(sender, {
-                        text: '🪄'+ (final - inital) + '👻', edit: ping.key });
-                    break;  
+        for (let i = 0; i < bars.length; i++) {
+            await new Promise(res => setTimeout(res, 600)); // animation delay
+            await socket.sendMessage(sender, { 
+                text: bars[i], 
+                edit: sentMsg.key 
+            });
+        }
+
+        // Show ping result
+        var final = new Date().getTime();
+        await socket.sendMessage(sender, { 
+            text: '⚡ FREEDOM ', 
+            edit: sentMsg.key 
+        });
+
+    } catch (e) {
+        console.log("❌ viprepot case error:", e);
+        await socket.sendMessage(sender, { text: "❌ Error occurred!" });
+    }
+    break;
+}
              }
              case 'facebook': {
     const axios = require('axios');
